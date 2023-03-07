@@ -43,7 +43,8 @@ class CutiTest extends TestCase
 
         $response = $this->get('/api/annual-leaves/' . $cuti->id);
         $response->assertStatus(200);
-        // Assert that the response body contains the expected data
+
+        // respons berisi data yang diharapkan
         $response->assertJson([
             'data' => [
                 'id' => $cuti->id,
@@ -56,5 +57,10 @@ class CutiTest extends TestCase
                 'updated_at' => $cuti->updated_at
             ]
         ]);
+
+        // Handle error if record not found
+        if ($response->getStatusCode() == 404) {
+            $this->fail('Record not found');
+        }
     }
 }
