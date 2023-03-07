@@ -74,7 +74,7 @@ class CutiTest extends TestCase
                 ]
             ]
         ]);
-        $response->assertJsonCount(3, 'data', $cuti);
+        $response->assertJsonCount(3, 'data');
     }
 
     /**
