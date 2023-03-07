@@ -48,6 +48,7 @@ class CutiTest extends TestCase
         ]);
     }
 
+
     /**
      * Test retrieving all annual leave requests
      *

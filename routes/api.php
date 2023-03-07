@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // route url untuk Resh API
-Route::get('/annual-leaves', [AnnualLeaveController::class, 'index']);
-Route::get('/annual-leaves/{id}', [AnnualLeaveController::class, 'show']);
+Route::get('/annual-leaves', [AnnualLeaveController::class, 'index'])->name('api.index');
+Route::get('/annual-leaves/{id}', [AnnualLeaveController::class, 'show'])->name('api.show');
 
-Route::post('/annual-leaves',  [AnnualLeaveController::class, 'store']);
+Route::post('/annual-leaves',  [AnnualLeaveController::class, 'store'])->name('api.store');
